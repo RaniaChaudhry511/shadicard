@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #d4a536;
+      --gold-light: #f3d98b;
+      --red: #9b1c1c;
+      --red-dark: #6e1212;
+      --cream: #fff8ec;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      color: var(--cream);
+      min-height: 100vh;
+    }
+
+    /* ---------- LANDING ---------- */
+    #landing {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .bismillah {
+      font-family: 'Amiri', serif;
+      font-size: 28px;
+      color: var(--gold-light);
+      margin-bottom: 18px;
+    }
+
+    .landing-title {
+      font-size: 42px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .landing-sub {
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+    }
+
+    .big-btn {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--red-dark);
+      border: none;
+      border-radius: 50px;
+      padding: 22px 54px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .big-btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    /* ---------- INVITATION ---------- */
+    #invitation {
+      display: none;
+      min-height: 100vh;
+      padding: 40px 16px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 480px;
+      background: var(--cream);
+      color: var(--red-dark);
+      border: 3px solid var(--gold);
+      outline: 1px solid var(--gold-light);
+      outline-offset: 8px;
+      border-radius: 6px;
+      padding: 40px 28px;
+      text-align: center;
+    }
+
+    .card .bismillah {
+      font-size: 26px;
+      color: var(--red);
+      margin-bottom: 14px;
+    }
+
+    .host {
+      font-size: 17px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .event-type {
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .couple {
+      font-family: 'Amiri', serif;
+      font-size: 32px;
+      color: var(--red);
+      line-height: 1.6;
+    }
+
+    .amp {
+      display: block;
+      font-size: 22px;
+      color: var(--gold);
+    }
+
+    .divider {
+      margin: 22px auto;
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+
+    .date { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+
+    .time {
+      font-size: 17px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .venue { font-size: 18px; font-weight: 700; }
+    .address { font-size: 15px; margin-top: 4px; }
+
+    .message {
+      font-size: 16px;
+      line-height: 1.6;
+      font-style: italic;
+      margin: 18px 0;
+    }
+
+    .contacts { font-size: 15px; line-height: 1.7; }
+
+    .back-link {
+      display: block;
+      margin-top: 36px;
+      background: transparent;
+      color: var(--gold-light);
+      border: 2px solid var(--gold-light);
+      border-radius: 50px;
+      padding: 10px 26px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      cursor: pointer;
+    }
+        /* ---------- MOBILE ---------- */
+    @media (max-width: 480px) {
+      .landing-title { font-size: 32px; }
+      .landing-sub { font-size: 16px; margin-bottom: 28px; }
+      .big-btn { padding: 16px 36px; font-size: 22px; }
+      .couple { font-size: 26px; }
+      .card { padding: 30px 18px; }
+      .card .bismillah { font-size: 22px; }
+      .date { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- PAGE 1: LANDING -->
+  <section id="landing">
+    <p class="bismillah">بِسْمِ ٱللّٰهِ ٱلرَّحْمٰنِ ٱلرَّحِيمِ</p>
+    <h1 class="landing-title">Wedding Celebration</h1>
+    <p class="landing-sub">We are delighted to invite you</p>
+    <button class="big-btn" onclick="openInvitation()">Your Invitation</button>
+  </section>
+
+  <!-- PAGE 2: INVITATION -->
+  <section id="invitation">
+    <div class="card">
+      <p class="bismillah">بِسْمِ ٱللّٰهِ ٱلرَّحْمٰنِ ٱلرَّحِيمِ</p>
+      <p class="host">
+        [Host Family Name] <br>
+        request the honour of your presence
+      </p>
+      <p class="event-type">Walima</p>
+      <div class="couple">
+        [Groom Name]
+        <span class="amp">&amp;</span>
+        [Bride Name]
+      </div>
+      <div class="divider"></div>
+      <p class="date">[Day, DD Month YYYY]</p>
+      <p class="time">[Time]</p>
+      <p class="venue">[Venue Name]</p>
+      <p class="address">[Venue Address]</p>
+      <div class="divider"></div>
+      <p class="message">
+        Your presence and prayers will make our celebration complete.
+      </p>
+      <div class="contacts">
+        [Contact Name 1] &nbsp; [Phone 1] <br>
+        [Contact Name 2] &nbsp; [Phone 2]
+      </div>
+    </div>
+    <button class="back-link" onclick="closeInvitation()">← Go Back</button>
+  </section>
+
+  <script>
+    const music = document.getElementById('bgMusic');
+    const START_TIME = 15;
+    const END_TIME = 32;
+
+    // Loop: 32 second par pahunchne par 15 second par wapas
+    music.addEventListener('timeupdate', function () {
+      if (music.currentTime >= END_TIME) {
+        music.currentTime = START_TIME;
+      }
+    });
+
+    function openInvitation() {
+      // Ye click hi gaane ko shuru karta hai (browser isi ki ijazat deta hai)
+      music.currentTime = START_TIME;
+      music.play().catch(function () {});
+
+      document.getElementById('landing').style.display = 'none';
+      document.getElementById('invitation').style.display = 'flex';
+      window.scrollTo(0, 0);
+    }
+
+    function closeInvitation() {
+      document.getElementById('invitation').style.display = 'none';
+      document.getElementById('landing').style.display = 'flex';
+    }
+  </script>
+
+</body>
+</html>
